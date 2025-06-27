@@ -1,0 +1,68 @@
+[
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\Src\\main.c.obj -c D:\\code\\stm32f103_test\\Src\\main.c",
+  "file": "D:\\code\\stm32f103_test\\Src\\main.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\Src\\main.c.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\Src\\syscall.c.obj -c D:\\code\\stm32f103_test\\Src\\syscall.c",
+  "file": "D:\\code\\stm32f103_test\\Src\\syscall.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\Src\\syscall.c.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\Src\\sysmem.c.obj -c D:\\code\\stm32f103_test\\Src\\sysmem.c",
+  "file": "D:\\code\\stm32f103_test\\Src\\sysmem.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\Src\\sysmem.c.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test -g -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -x assembler-with-cpp -MMD -MP -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\Startup\\startup_stm32f103c8tx.s.obj -c D:\\code\\stm32f103_test\\Startup\\startup_stm32f103c8tx.s",
+  "file": "D:\\code\\stm32f103_test\\Startup\\startup_stm32f103c8tx.s",
+  "output": "CMakeFiles\\stm32f103_test.dir\\Startup\\startup_stm32f103c8tx.s.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\board\\board.c.obj -c D:\\code\\stm32f103_test\\board\\board.c",
+  "file": "D:\\code\\stm32f103_test\\board\\board.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\board\\board.c.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\bsp\\uart\\bsp_uart.c.obj -c D:\\code\\stm32f103_test\\bsp\\uart\\bsp_uart.c",
+  "file": "D:\\code\\stm32f103_test\\bsp\\uart\\bsp_uart.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\bsp\\uart\\bsp_uart.c.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_gpio.c.obj -c D:\\code\\stm32f103_test\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_gpio.c",
+  "file": "D:\\code\\stm32f103_test\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_gpio.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_gpio.c.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_rcc.c.obj -c D:\\code\\stm32f103_test\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_rcc.c",
+  "file": "D:\\code\\stm32f103_test\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_rcc.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_rcc.c.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_usart.c.obj -c D:\\code\\stm32f103_test\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_usart.c",
+  "file": "D:\\code\\stm32f103_test\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_usart.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\libraries\\STM32F10x_StdPeriph_Driver\\src\\stm32f10x_usart.c.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\libraries\\STM32F10x_StdPeriph_Driver\\src\\misc.c.obj -c D:\\code\\stm32f103_test\\libraries\\STM32F10x_StdPeriph_Driver\\src\\misc.c",
+  "file": "D:\\code\\stm32f103_test\\libraries\\STM32F10x_StdPeriph_Driver\\src\\misc.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\libraries\\STM32F10x_StdPeriph_Driver\\src\\misc.c.obj"
+},
+{
+  "directory": "D:/code/stm32f103_test/build/debug",
+  "command": "D:\\ST\\STM32CubeCLT_1.18.0\\GNU-tools-for-STM32\\bin\\arm-none-eabi-gcc.exe -DDEBUG -ID:/code/stm32f103_test/Inc -ID:/code/stm32f103_test/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x -ID:/code/stm32f103_test/libraries/CMSIS/CM3/CoreSupport -ID:/code/stm32f103_test/libraries/STM32F10x_StdPeriph_Driver/inc -ID:/code/stm32f103_test/board -ID:/code/stm32f103_test/bsp/uart -ID:/code/stm32f103_test/module -fdata-sections -ffunction-sections -Wl,--gc-sections -g -std=gnu11 -mthumb -mcpu=cortex-m3 -Wall -Wextra -Wpedantic -Wno-unused-parameter -Og -g3 -ggdb -o CMakeFiles\\stm32f103_test.dir\\libraries\\CMSIS\\CM3\\DeviceSupport\\ST\\STM32F10x\\system_stm32f10x.c.obj -c D:\\code\\stm32f103_test\\libraries\\CMSIS\\CM3\\DeviceSupport\\ST\\STM32F10x\\system_stm32f10x.c",
+  "file": "D:\\code\\stm32f103_test\\libraries\\CMSIS\\CM3\\DeviceSupport\\ST\\STM32F10x\\system_stm32f10x.c",
+  "output": "CMakeFiles\\stm32f103_test.dir\\libraries\\CMSIS\\CM3\\DeviceSupport\\ST\\STM32F10x\\system_stm32f10x.c.obj"
+}
+]
