@@ -32,21 +32,29 @@ set(sources_SRCS ${sources_SRCS}
     ${CMAKE_CURRENT_SOURCE_DIR}/libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.c
     ${CMAKE_CURRENT_SOURCE_DIR}/libraries/STM32F10x_StdPeriph_Driver/src/misc.c
     ${CMAKE_CURRENT_SOURCE_DIR}/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/system_stm32f10x.c
-
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/croutine.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/event_groups.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/list.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/queue.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/stream_buffer.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/tasks.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/timers.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/portable/MemMang/heap_4.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/portable/GCC/ARM_CM3/port.c
 )
 
 # Include directories
 set(include_c_DIRS ${include_c_DIRS}
     
-	${CMAKE_CURRENT_SOURCE_DIR}/Inc
+	${CMAKE_CURRENT_SOURCE_DIR}/config
     ${CMAKE_CURRENT_SOURCE_DIR}/libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x
     ${CMAKE_CURRENT_SOURCE_DIR}/libraries/CMSIS/CM3/CoreSupport
     ${CMAKE_CURRENT_SOURCE_DIR}/libraries/STM32F10x_StdPeriph_Driver/inc
     ${CMAKE_CURRENT_SOURCE_DIR}/board
     ${CMAKE_CURRENT_SOURCE_DIR}/bsp/uart
     ${CMAKE_CURRENT_SOURCE_DIR}/module
-
-
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/freertos/portable/GCC/ARM_CM3
 )
 set(include_cxx_DIRS ${include_cxx_DIRS}
     
