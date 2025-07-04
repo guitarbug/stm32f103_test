@@ -227,17 +227,20 @@ g_pfnVectors:
 	.weak	UsageFault_Handler
 	.thumb_set	UsageFault_Handler,Default_Handler
 
+    /* 将 SVC 中断处理程序映射到 vPortSVCHandler, 用于任务切换*/
 	.weak	SVC_Handler
-	.thumb_set	SVC_Handler,Default_Handler
+	.thumb_set	SVC_Handler,vPortSVCHandler
 
 	.weak	DebugMon_Handler
 	.thumb_set	,Default_Handler
 
+    /* 将 PendSV 中断处理程序映射到 xPortPendSVHandler,  处理任务上下文切换*/
 	.weak	PendSV_Handler
-	.thumb_set	PendSV_Handler,Default_Handler
+	.thumb_set	PendSV_Handler,xPortPendSVHandler
 
+    /*将 SysTick 中断处理程序映射到 xPortSysTickHandler, 处理系统节拍 */
 	.weak	SysTick_Handler
-	.thumb_set	SysTick_Handler,Default_Handler
+	.thumb_set	SysTick_Handler,xPortSysTickHandler
 
   .weak	WWDG_IRQHandler
 	.thumb_set	WWDG_IRQHandler,Default_Handler
