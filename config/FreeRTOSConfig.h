@@ -38,6 +38,21 @@
 #define configKERNEL_INTERRUPT_PRIORITY         (configLIBRARY_LOWEST_INTERRUPT_PRIORITY << 4)
 #define configMAX_SYSCALL_INTERRUPT_PRIORITY    (configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY << 4)
 
+/*暂时禁用处理程序安装检查*/
+#define configCHECK_HANDLER_INSTALLATION    0
+
+/* Optional functions - most linkers will remove unused functions anyway. */
+//#define INCLUDE_vTaskPrioritySet            1
+//#define INCLUDE_uxTaskPriorityGet           1
+//#define INCLUDE_vTaskDelete                 1
+//#define INCLUDE_vTaskSuspend               1
+//#define INCLUDE_xResumeFromISR             1
+//#define INCLUDE_vTaskDelayUntil            1
+#define INCLUDE_vTaskDelay                 1  // 启用vTaskDelay
+//#define INCLUDE_xTaskGetSchedulerState      1
+//#define INCLUDE_xTaskGetCurrentTaskHandle   1
+//#define INCLUDE_uxTaskGetStackHighWaterMark 1
+
 // 断言函数
 extern void vAssertCalled(const char *pcFile, unsigned long ulLine);
 #define configASSERT(x) if((x) == 0) vAssertCalled(__FILE__, __LINE__)
