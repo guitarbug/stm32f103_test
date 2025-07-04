@@ -25,9 +25,9 @@ void assert_failed(uint8_t* file, uint32_t line)
     {
         // LED闪烁指示错误状态
         GPIO_SetBits(GPIOC, GPIO_Pin_13);
-        delay_ms(100);
+        vTaskDelay(100);
         GPIO_ResetBits(GPIOC, GPIO_Pin_13);
-        delay_ms(100);
+        vTaskDelay(100);
     }
 }
 #endif
@@ -38,9 +38,9 @@ void vAssertCalled(const char *pcFile, unsigned long ulLine) {
     while(1) {
         // LED闪烁指示错误
         GPIO_SetBits(GPIOC, GPIO_Pin_13);
-        delay_ms(100);
+        vTaskDelay(100);
         GPIO_ResetBits(GPIOC, GPIO_Pin_13);
-        delay_ms(100);
+        vTaskDelay(100);
     }
 }
 
@@ -49,9 +49,9 @@ void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName) {
     printf("\r\n[ERROR] Stack overflow in task: %s\r\n", pcTaskName);
     while(1) {
         GPIO_SetBits(GPIOC, GPIO_Pin_13);
-        delay_ms(200);
+        vTaskDelay(200);
         GPIO_ResetBits(GPIOC, GPIO_Pin_13);
-        delay_ms(200);
+        vTaskDelay(200);
     }
 }
 
@@ -60,25 +60,25 @@ void vApplicationMallocFailedHook(void) {
     printf("\r\n[ERROR] Memory allocation failed!\r\n");
     while(1) {
         GPIO_SetBits(GPIOC, GPIO_Pin_13);
-        delay_ms(300);
+        vTaskDelay(300);
         GPIO_ResetBits(GPIOC, GPIO_Pin_13);
-        delay_ms(300);
+        vTaskDelay(300);
     }
 }
 
 // LED任务实现
 void LedTask(void *argument) {
-    const TickType_t xDelay = pdMS_TO_TICKS(500); // 将1000ms转换为tick数
+    const TickType_t xDelay = pdMS_TO_TICKS(1000); // 将1000ms转换为tick数
     
     printf("LedTask started!\r\n");  // 添加任务启动提示
 
     for (;;) {
         GPIO_SetBits(GPIOC, GPIO_Pin_13);
-        printf("freertos LedTask: LED ON!\r\n");
+        //printf("freertos LedTask: LED ON!\r\n");
         vTaskDelay(xDelay);  // 使用FreeRTOS的延迟函数
         
         GPIO_ResetBits(GPIOC, GPIO_Pin_13);
-        printf("freertos LedTask: LED OFF!\r\n");
+        //printf("freertos LedTask: LED OFF!\r\n");
         vTaskDelay(xDelay);  // 使用FreeRTOS的延迟函数
     }
 }
@@ -86,9 +86,9 @@ void LedTask(void *argument) {
 //监控系统状态任务实现
 void vTaskStats(void *argument) {
     const TickType_t xDelay = pdMS_TO_TICKS(5000);  // 5秒打印一次
-    
+    uint32_t counter = 0;
     for(;;) {
-        printf("\r\n=== Task Stats ===\r\n");
+        printf("\r\n=== Task Stats %lu ===\r\n",counter++);
         printf("Free Heap: %d bytes\r\n", xPortGetFreeHeapSize());
         printf("Min Free Heap: %d bytes\r\n", xPortGetMinimumEverFreeHeapSize());
         vTaskDelay(xDelay);
@@ -98,7 +98,7 @@ void vTaskStats(void *argument) {
 int main(void)
 {
     // 设置中断优先级分组为4
-    //NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);	
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);	
 	
     board_init();
 	
@@ -121,9 +121,9 @@ int main(void)
     BaseType_t xReturn = xTaskCreate(
         LedTask,                   // 任务函数
         "LED Task",                // 任务名称
-        configMINIMAL_STACK_SIZE * 4, // 栈大小（单位：字）
+        configMINIMAL_STACK_SIZE * 8, // 栈大小（单位：字）
         NULL,                      // 参数
-        tskIDLE_PRIORITY + 1,      // 优先级
+        tskIDLE_PRIORITY + 3,      // 优先级
         NULL            // 任务句柄
     );
 
@@ -144,10 +144,10 @@ int main(void)
     );
 
     //配置系统节拍定时器
-    //if (SysTick_Config(SystemCoreClock / configTICK_RATE_HZ) != 0) {
-    //    printf("SysTick configuration failed!\r\n");
-    //    while(1);
-    //}
+    if (SysTick_Config(SystemCoreClock / configTICK_RATE_HZ) != 0) {
+        printf("SysTick configuration failed!\r\n");
+        while(1);
+    }
     
     // 启动FreeRTOS调度器
     vTaskStartScheduler();
