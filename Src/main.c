@@ -68,24 +68,39 @@ void vApplicationMallocFailedHook(void) {
 
 // LED任务实现
 void LedTask(void *argument) {
-    for (;;) {
-        //HAL_GPIO_TogglePin(GPIOC, GPIO_Pin_13); // 翻转LED
-        //vTaskDelay(pdMS_TO_TICKS(500));         // 延迟500ms
+    const TickType_t xDelay = pdMS_TO_TICKS(500); // 将1000ms转换为tick数
+    
+    printf("LedTask started!\r\n");  // 添加任务启动提示
 
+    for (;;) {
         GPIO_SetBits(GPIOC, GPIO_Pin_13);
-		printf("freertos LedTask: LED ON!\r\n");
-		delay_ms(100);
-		
-		GPIO_ResetBits(GPIOC, GPIO_Pin_13);
-		printf("freertos LedTask: LED OFF!\r\n");
-		delay_ms(100);
+        printf("freertos LedTask: LED ON!\r\n");
+        vTaskDelay(xDelay);  // 使用FreeRTOS的延迟函数
+        
+        GPIO_ResetBits(GPIOC, GPIO_Pin_13);
+        printf("freertos LedTask: LED OFF!\r\n");
+        vTaskDelay(xDelay);  // 使用FreeRTOS的延迟函数
+    }
+}
+
+//监控系统状态任务实现
+void vTaskStats(void *argument) {
+    const TickType_t xDelay = pdMS_TO_TICKS(5000);  // 5秒打印一次
+    
+    for(;;) {
+        printf("\r\n=== Task Stats ===\r\n");
+        printf("Free Heap: %d bytes\r\n", xPortGetFreeHeapSize());
+        printf("Min Free Heap: %d bytes\r\n", xPortGetMinimumEverFreeHeapSize());
+        vTaskDelay(xDelay);
     }
 }
 
 int main(void)
 {
+    // 设置中断优先级分组为4
+    //NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);	
 	
-	board_init();
+    board_init();
 	
 	uart1_init(115200);
 	
@@ -100,9 +115,10 @@ int main(void)
 
     // 使用printf测试
     printf("Hello World!!!\r\n");
+    printf("SystemCoreClock = %lu Hz\r\n", SystemCoreClock);
 
     // 创建LED任务
-    xTaskCreate(
+    BaseType_t xReturn = xTaskCreate(
         LedTask,                   // 任务函数
         "LED Task",                // 任务名称
         configMINIMAL_STACK_SIZE * 4, // 栈大小（单位：字）
@@ -111,8 +127,33 @@ int main(void)
         NULL            // 任务句柄
     );
 
+    if(xReturn != pdPASS)
+    {
+        printf("LED Task creation failed!\r\n");
+        while(1);
+    }    
+    
+    //创建监控系统状态任务
+    xTaskCreate(
+        vTaskStats,                   // 任务函数
+        "Task Stast",                // 任务名称
+        configMINIMAL_STACK_SIZE * 4, // 栈大小（单位：字）
+        NULL,                      // 参数
+        tskIDLE_PRIORITY + 1,      // 优先级
+        NULL            // 任务句柄
+    );
+
+    //配置系统节拍定时器
+    //if (SysTick_Config(SystemCoreClock / configTICK_RATE_HZ) != 0) {
+    //    printf("SysTick configuration failed!\r\n");
+    //    while(1);
+    //}
+    
     // 启动FreeRTOS调度器
     vTaskStartScheduler();
+
+    /* 如果程序运行到这里，说明系统出错 */
+    printf("Scheduler start failed!\r\n");
 
     // 如果调度器启动成功，以下代码不会运行
 	while(1)
